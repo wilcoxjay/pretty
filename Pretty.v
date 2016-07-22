@@ -10,6 +10,10 @@ Delimit Scope string_scope with string.
 Bind Scope string_scope with String.string.
 Local Open Scope string_scope.
 
+Delimit Scope char_scope with char.
+Bind Scope char_scope with Ascii.ascii.
+Local Open Scope char_scope.
+
 Require Import Arith Program Omega Wf_nat.
 
 Module internal.
@@ -61,6 +65,8 @@ Module string_utils.
     | 0 => ""
     | S n' => s ++ repeat n' s
     end.
+
+  Definition newline : String.string := String.String "010"%char "".
 End string_utils.
 Import string_utils.
 
@@ -85,7 +91,7 @@ Module rendered.
     match d with
     | nil => ""
     | text s d' => s ++ layout d'
-    | line n d' => repeat n " " ++ layout d'
+    | line n d' => newline ++ repeat n " " ++ layout d'
     end.
 
   (* introduce extra parameter k to avoid need for negative numbers in
