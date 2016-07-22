@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+## Configures and calls coqproject.sh (https://github.com/dwoos/coqproject)
+
+## Configuration options for coqproject.sh
+DEPS=()
+DIRS=()
+CANARIES=()
+EXTRA=()
+source coqproject.sh
