@@ -1,0 +1,12 @@
+*~
+*.vo
+*.v.d
+*.glob
+*.aux
+*.hi
+*.o
+*.glob
+Pretty
+Pretty.hs
+Makefile.coq
+_CoqProject
